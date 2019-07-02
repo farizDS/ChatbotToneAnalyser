@@ -1,0 +1,17 @@
+awscli==1.16.140
+botocore==1.12.130
+certifi==2019.6.16
+click==6.6
+ibm-cloud-sdk-core==0.4.2
+ibm-watson==3.0.4
+ordereddict==1.1
+pysolr==3.5.0
+python-dateutil==2.8.0
+python-dotenv==0.5.1
+regex==2019.6.8
+requests==2.11.0
+six==1.10.0
+slackclient==1.2.1
+watson-developer-cloud==0.18.0
+websocket-client==0.48.0
+wincertstore==0.2
