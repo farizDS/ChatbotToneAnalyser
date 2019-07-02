@@ -6,7 +6,12 @@ from slackclient import SlackClient
 
 from pprint import pprint
 
+
 class CaringBot:
+  ########################################################################################################################
+  # Variable initialisation
+  ######################################################################################################################## 
+  
   def __init__(self,slack_client, conversation_client, workspace, tone_analyser):
     bot_id = slack_client.api_call("auth.test")["user_id"]
     self.slack_client = slack_client
@@ -33,6 +38,7 @@ class CaringBot:
       """
       MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
       matches = re.search(MENTION_REGEX, message_text)
+       
       # the first group contains the username, the second group contains the remaining message
       return (matches.group(1), matches.group(2).strip()) if matches else (None, None)
 
@@ -49,7 +55,7 @@ class CaringBot:
     """
     post reponse from Watson Asistant to Slack 
     """
-    print("now running post_to_slack")   
+    print("Sending response from Watson Assistant to Slack......")   
     self.slack_client.api_call("chat.postMessage", 
                           channel=channel,
                           text=response, as_user=True)
@@ -59,7 +65,7 @@ class CaringBot:
   ######################################################################################################################## 
 
   def handle_message(self, message, channel):
-    print("now running handle_message")
+    print("Message, received!")
     
     #get the tone from Tone Analyser
     tone_response= self.tone_analyser.tone(tone_input = message, content_type='text/plain').get_result()
@@ -87,7 +93,7 @@ class CaringBot:
       while True:
         slack_output = self.slack_client.rtm_read()
         message, channel = self.parse_slack_output(slack_output)
-        print(message)
+        
         if message and channel:
           self.handle_message(message, channel)
         time.sleep(self.delay)
