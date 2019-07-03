@@ -1,5 +1,4 @@
-# watson-caring-bot
+# watson-recipe-bot
 
 ## tutorial:
-
-https://docs.google.com/document/d/1mxK1uzgC9dQ0JyphrA6O_WoxCT4EILx0-hxbOe8dn8g/edit?usp=sharing
+https://medium.com/ibm-watson-developer-cloud/how-to-build-a-recipe-slack-bot-using-watson-conversation-and-spoonacular-api-487eacaf01d4#.hed8lsl4t
